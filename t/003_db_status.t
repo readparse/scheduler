@@ -4,6 +4,7 @@ use Test::More;
 use lib 'lib';
 
 use_ok( 'Scheduler::Status' );
+use_ok( 'Scheduler::Manager::Status' );
 
 ok( my $status = Scheduler::Status->new( name => 'Available' ), 'Created new Status object to lookup' );
 ok( $status->load(), 'Loaded Status object');
@@ -21,6 +22,10 @@ ok( my $status2 = Scheduler::Status->new( name => 'Brand new', sequence => 9000 
 ok( $status2->save, 'Saved new Status');
 ok( $status2->delete, 'Deleted new Status');
 
+ok( my $status_list = Scheduler::Manager::Status->get_statuses, 'Got all Status objects' );
+for my $i (@{$status_list}) {
+	ok( $i->name, 'Got Status name "' . $i->name . '"' );
+}
 
 done_testing();
 

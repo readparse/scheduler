@@ -12,7 +12,7 @@ create table position(
 
 insert into position (number, name) values('PSC-C2560', 'Manager, Software Engineering');
 insert into position (number, name) values('PSC-C2561', 'Senior Java Developer');
-insert into position (number, name) values('PSC-C2562', 'Senior C# Developer');
+insert into position (number, name) values('PSC-C2562', 'Senior C-sharp Developer');
 
 create table status(
 	id integer primary key autoincrement,
