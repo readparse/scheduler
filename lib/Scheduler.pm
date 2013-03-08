@@ -2,7 +2,7 @@ package Scheduler;
 use Dancer ':syntax';
 use Scheduler::Position;
 use Scheduler::Status;
-use Scheduler::Appointment;
+use Scheduler::Event;
 
 our $VERSION = '0.1';
 
@@ -28,15 +28,15 @@ get '/status/:id' => sub {
 	return;
 };
 
-get '/appointment/new' => sub {
-	template 'appointment_form';
+get '/event/new' => sub {
+	template 'event_form';
 };
 
-get '/appointment/:id' => sub {
+get '/event/:id' => sub {
 	my $id = params->{id};
-	my $appointment = Scheduler::Appointment->new( id => $id);
-	if ($appointment->load) {
-		return $appointment->values;
+	my $event = Scheduler::Event->new( id => $id);
+	if ($event->load) {
+		return $event->values;
 	}
 	return;
 };

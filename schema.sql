@@ -1,5 +1,5 @@
 
-drop table appointment;
+drop table event;
 drop table status;
 drop table position;
 
@@ -25,7 +25,7 @@ insert into status(name, sequence) values('Proposed', 20);
 insert into status(name, sequence) values('Confirmed', 30);
 insert into status(name, sequence) values('Cancelled', 40);
 
-create table appointment(
+create table event(
 	id integer primary key autoincrement,
 	datetime datetime,
 	candidate varchar(255),

@@ -1,9 +1,9 @@
-package Scheduler::Appointment;
+package Scheduler::Event;
 use lib 'lib';
 use base 'Scheduler::DB::Object';
 
 __PACKAGE__->meta->setup(
-	table => 'appointment',
+	table => 'event',
 	columns => [ qw( id datetime candidate phone_number position_id status_id ) ],
 	pk_columns => 'id',
 
